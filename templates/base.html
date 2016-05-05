@@ -61,7 +61,8 @@
     {% endif %}
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
+    <!--link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet"-->
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/prism.css" rel="stylesheet" />
     {% if 'tipue_search' in PLUGINS %}
     <link href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css" rel="stylesheet">
     {% endif %}
@@ -98,6 +99,7 @@
         <link href="{{ SITEURL }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} {{ category }} ATOM Feed"/>
     {% endif %}
+
 
 </head>
 <body>
@@ -202,5 +204,6 @@
 {% include 'includes/piwik.html' %}
 
 {% block scripts %}{% endblock %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/prism.js"></script>
 </body>
 </html>
